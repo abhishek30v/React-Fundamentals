@@ -1,3 +1,5 @@
+//this is a simple game to increment the values of individual colors when they are clicked
+
 import { useState } from "react";
 
 export default function Game() {
