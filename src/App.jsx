@@ -1,12 +1,16 @@
-import { useState } from "react";
 import "./App.css";
 import Todo from "./TodoList";
 import Lottery from "./Lottery";
+import { evaluateSum } from "./helper";
 
 function App() {
+  let winningCondition = (array) => {
+    return evaluateSum(array) === 15;
+  };
+
   return (
     <>
-      <Lottery />
+      <Lottery n={3} winningCondition={winningCondition}></Lottery>
     </>
   );
 }

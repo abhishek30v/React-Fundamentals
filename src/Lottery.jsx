@@ -1,17 +1,27 @@
 import { useState } from "react";
+import { numberGenerator, evaluateSum } from "./helper";
+import "./Ticket";
+import Ticket from "./Ticket";
+import Button from "./Button";
 
-function Lottery() {
-  const [ticket, setTicket] = useState([0, 0, 0]);
+function Lottery({ n, winningCondition }) {
+  let [ticket, setTicket] = useState(numberGenerator(n));
+  //let isWin = evaluateSum(ticket) === winningNumber;
+
+  let isWin = winningCondition(ticket);
+
+  let getNewTicket = () => {
+    setTicket(numberGenerator(n));
+  };
 
   return (
-    <div>
+    <div className="Lottery">
       <h1>Lottery Game</h1>
-      <div className="ticketNumber">
-        <span>{ticket[0]}</span>
-        <span>{ticket[1]}</span>
-        <span>{ticket[2]}</span>
-      </div>
-      <button>Get New Ticket</button>
+      <Ticket ticket={ticket}></Ticket>
+      <Button action={getNewTicket}></Button>
+      <h3>{isWin && "Congratulations, you won"}</h3>
     </div>
   );
 }
+
+export default Lottery;
