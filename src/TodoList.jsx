@@ -1,3 +1,5 @@
+//todo list using the basic react properties
+
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
