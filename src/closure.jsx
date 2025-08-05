@@ -1,3 +1,5 @@
+//Working of closures in react using states
+
 import { useState } from "react";
 
 export default function Count() {
