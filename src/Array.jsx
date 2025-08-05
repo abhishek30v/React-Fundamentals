@@ -1,3 +1,5 @@
+//This is a general use case of arrays that how array states are changed using spreader.
+
 import { useState } from "react";
 
 export default function Game2() {
